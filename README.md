@@ -1,73 +1,80 @@
 # Personal Chatbot
 
-This project is a **Personal Chatbot** application built using **Llama Index**, **LangChain**, and **Streamlit**. It leverages a **Llama-2-7B-Chat** model to generate AI responses based on user input. The chatbot is designed to provide responses in markdown format and includes an interactive UI.
+## Overview
+This project is a **Personal AI Chatbot** built using **Llama-2** and **Streamlit**, providing an interactive chatbot experience. The chatbot leverages **Llama Index** and **LangChain** to manage conversation history and generate responses efficiently.
 
 ## Features
-- Uses **Llama-2-7B-Chat** model for generating AI responses.
-- Interactive chat interface built with **Streamlit**.
-- Supports contextual memory to maintain conversation history.
-- Provides a sidebar option to clear conversation history.
-- Uses **Llama Index** and **LangChain** for AI interactions.
+- Uses **Llama-2-7B** for AI-driven conversation.
+- **Streamlit-based UI** for easy interaction.
+- **Supports Markdown responses**.
+- **Clearing conversation history** with a single click.
+- **Efficient response generation** using GPU-accelerated inference.
 
 ## Installation
+To set up and run the chatbot locally, follow these steps:
 
-### Prerequisites
-Ensure you have **Python 3.8+** installed on your system. Then, install the required dependencies using:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-```sh
+### 2. Install Dependencies
+Ensure you have Python installed (preferably 3.8 or later). Install the required dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
-### Additional Dependencies
-If the packages are not included in `requirements.txt`, install them manually using:
-
-```sh
-pip install langchain wget llama-index cohere llama-cpp-python streamlit
+### 3. Download the Llama Model
+The chatbot requires the **Llama-2-7B-Chat GGUF** model. Download it using `wget`:
+```bash
+python download_model.py
 ```
+Alternatively, you can manually download it from:
+[Hugging Face](https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF)
 
-## Model Setup
-Before running the chatbot, download the **Llama-2-7B-Chat** model:
-
-```python
-import wget
-
-def bar_custom(current, total, width=80):
-    print("Downloading %d%% [%d / %d] bytes" % (current / total * 100, current, total))
-
-model_url = "https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q2_K.gguf"
-wget.download(model_url, bar=bar_custom)
-```
-
-## Running the Application
-
-To start the chatbot, run the following command:
-
-```sh
+### 4. Run the Chatbot
+Start the chatbot using Streamlit:
+```bash
 streamlit run app.py
 ```
-
-If you want to expose the chatbot publicly using LocalTunnel, run:
-
-```sh
+To access it remotely, use:
+```bash
 npx localtunnel --port 8501
 ```
 
 ## File Structure
 ```
-├── app.py              # Main application file
-├── requirements.txt    # Python dependencies
-├── README.md           # Project documentation
+📂 your-repo-name
+│── app.py              # Main chatbot application
+│── download_model.py   # Script to download the Llama model
+│── requirements.txt    # Required dependencies
+│── README.md           # Documentation
 ```
 
-## Usage
-1. Open the chatbot in your browser using the **localhost link** provided by Streamlit.
-2. Type a question in the chat input field.
-3. The chatbot will generate a response based on the **Llama-2-7B-Chat model**.
-4. To clear the conversation history, click the **"Clear Conversation"** button in the sidebar.
+## Technologies Used
+- **Llama-2** (Meta AI)
+- **Llama Index**
+- **LangChain**
+- **Streamlit** (for UI)
+- **Cohere** (optional for enhanced language understanding)
 
-## Issues & Support
-If you encounter any issues, feel free to raise an issue on the project's repository or reach out to the contributors.
+## Usage
+1. Enter your query in the chat input field.
+2. Wait for the chatbot to generate a response.
+3. Clear conversation history if needed.
+
+## Known Issues
+- Initial model download may take time.
+- Requires GPU support for optimal performance.
+
+## Contributing
+Contributions are welcome! Feel free to fork this repository, make improvements, and submit a pull request.
 
 ## License
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License. See `LICENSE` for details.
+
+---
+
+Developed with ❤️ by [Your Name](https://github.com/Ajaygenuinedoubt)
 
